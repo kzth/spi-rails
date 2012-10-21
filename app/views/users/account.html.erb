@@ -1,0 +1,19 @@
+<h1>User Top Page</h1>
+
+<table id="user-info">
+  <tr>
+    <td>アカウント名</td>
+    <td><%= @user.account_name %></td>
+  </tr>
+  <tr>
+    <td>レベル</td>
+    <td><%= @user.level %></td>
+  </tr>
+  <tr>
+    <td>ポイント</td>
+    <td><%= @user.point %></td>
+  </tr>
+</table>
+
+<%= link_to 'user config', {action: "edit", account_name: @user.account_name} %>
+<%= link_to 'logout', {controller: "top", action: "logout"} %>

@@ -1,0 +1,36 @@
+<h1>User Top Page</h1>
+
+<table id="user-info">
+  <tr>
+    <td>アカウント名</td>
+    <td><%= @user.account_name %>さん</td>
+  </tr>
+  <tr>
+    <td>レベル</td>
+    <td><%= @user.level %></td>
+  </tr>
+  <tr>
+    <td>ポイント</td>
+    <td><%= @user.point %>ポイント</td>
+  </tr>
+  <tr>
+    <td>ログイン回数</td>
+    <td><%= @user.login_count %>回</td>
+  </tr>
+  <tr>
+    <td>合計プレイ時間</td>
+    <td><%= @user.sum_time %>分</td>
+  </tr>
+  <tr>
+    <td>最終ログイン日</td>
+    <td><%= @user.logout_at %></td>
+  </tr>
+</table>
+
+<a href='#' id='question'>漢字語威力問題</a><br />
+<div id="questions" style="display: none; margin-left: 10px;">
+  <%= link_to "同義語問題", {controller: "question", action: "dougi", num: 1} %><br />
+  <%= link_to "対義語問題", {controller: "question", action: "taigi", num: 1} %>
+</div>
+<%= link_to 'Edit Config', edit_user_path(@user) %><br />
+<%= link_to 'Logout', {controller: "top", action: "logout"} %>

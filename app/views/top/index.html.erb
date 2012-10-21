@@ -1,0 +1,12 @@
+<h1>login page</h1>
+<%= flash[:notice] %>
+<%= form_tag(:action => "login") do  %>
+  <div class="login_form">
+    <%= label :user, :account_name %>
+    <%= text_field :user, :account_name, {:size => 25} %><br />
+    <%= label :user, :password %>
+    <%= password_field :user, :password, {:size => 25} %>
+  </div>
+  <%= submit_tag "login" %>
+<% end %>
+
