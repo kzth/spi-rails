@@ -32,5 +32,6 @@
   <%= link_to "同義語問題", {controller: "question", action: "dougi", num: 1} %><br />
   <%= link_to "対義語問題", {controller: "question", action: "taigi", num: 1} %>
 </div>
-<%= link_to 'Edit Config', edit_user_path(@user) %><br />
+<%= link_to 'パスワード変更', edit_user_path(@user) %><br />
+<%= link_to 'バッジ情報' %><br />
 <%= link_to 'Logout', {controller: "top", action: "logout"} %>

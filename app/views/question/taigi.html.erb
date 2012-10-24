@@ -1,11 +1,11 @@
 <h1>Question Page</h1>
-<h2>Question <%= @question_num %></h2>
+<h2>Question <%= @num %></h2>
 <p><%= @question %></p><br />
 <%= form_tag action: "explain" do %>
   <% @select.shuffle.each_with_index do |item, i|%>
     <%= radio_button_tag("a", item) %>
     <%= item %>
   <% end %><br /><br />
-  <%= hidden_field_tag(:num, @question_num + 1) %>
+  <%= hidden_field_tag(:num, @num) %>
   <%= submit_tag '回答する' %>
 <% end %>

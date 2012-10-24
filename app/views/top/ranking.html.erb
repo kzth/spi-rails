@@ -1,0 +1,20 @@
+<h1>Ranking Page</h1>
+
+<table border='1'>
+  <tr>
+    <td>順位</td>
+    <td>account name</td>
+    <td>point</td>
+  </tr>
+  <% num = 0 %>
+  <% @users.each do |user| %>
+    <tr>
+      <td><%= num = num + 1 %></td>
+      <td><%= user.account_name %></td>
+      <td><%= user.point %></td>
+    </tr>
+  <% end %>
+</table>
+
+<br />
+<%= link_to 'Topページへ', root_path %>

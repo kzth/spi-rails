@@ -2,4 +2,4 @@
 <p>あなたの選択肢</p><br />
 <%= @selected %>
 <p>答え<%= @answer %></p>
-<%= link_to 'next', {controller: 'question', action: 'dougi', num: @num} %>
+<%= link_to 'next', {controller: 'question', action: @type, num: @num} %>

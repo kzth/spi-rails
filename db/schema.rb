@@ -11,7 +11,17 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121020094511) do
+ActiveRecord::Schema.define(:version => 20121022194223) do
+
+  create_table "badges", :force => true do |t|
+    t.string   "badge_name",   :null => false
+    t.string   "badge_info"
+    t.datetime "get_time"
+    t.integer  "get_point_at"
+    t.integer  "get_level_at"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+  end
 
   create_table "dougis", :force => true do |t|
     t.string   "question",  :null => false
@@ -20,6 +30,13 @@ ActiveRecord::Schema.define(:version => 20121020094511) do
     t.string   "category"
     t.datetime "create_at"
     t.datetime "update_at"
+  end
+
+  create_table "points", :id => false, :force => true do |t|
+    t.integer  "point",      :null => false
+    t.integer  "level_at",   :null => false
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "sessions", :force => true do |t|
@@ -51,6 +68,11 @@ ActiveRecord::Schema.define(:version => 20121020094511) do
     t.integer  "point",        :default => 0
     t.datetime "created_at",                  :null => false
     t.datetime "updated_at",                  :null => false
+  end
+
+  create_table "users_badges", :id => false, :force => true do |t|
+    t.integer "users_id"
+    t.integer "badges_id"
   end
 
 end

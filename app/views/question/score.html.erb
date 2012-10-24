@@ -1,0 +1,11 @@
+<h1>成績発表</h1>
+
+<p>10問中 <%= @correct_num %> 問に正解しました</p>
+<p><%= @add_point %>ポイント加算されました</p>
+<p><%= @point %>ポイントになりました</p>
+
+<% if flash[:levelup] %>
+  <p><%= flash[:levelup] %></p>
+<% end %>
+
+<%= link_to 'Topページに戻る', user_path(@user) %>

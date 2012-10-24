@@ -9,6 +9,7 @@ Spigame::Application.routes.draw do
   get "top/index"
   post "top/login"
   get"top/logout"
+  get"top/ranking"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

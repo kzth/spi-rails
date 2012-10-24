@@ -26,6 +26,10 @@ class TopController < ApplicationController
     redirect_to root_path
   end
 
+  def ranking
+    @users = User.order('point DESC').limit(10)
+  end
+
   private
   def set_session(id)
     session[:user_id] = id

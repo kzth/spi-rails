@@ -1,4 +1,5 @@
-<h1>login page</h1>
+<h1>SPI語彙力アゲッター改</h1>
+<h2>Login Page</h2>
 <%= flash[:notice] %>
 <%= form_tag(:action => "login") do  %>
   <div class="login_form">
@@ -10,3 +11,6 @@
   <%= submit_tag "login" %>
 <% end %>
 
+<br />
+<%= link_to 'ランキング', { controller: 'top', action: 'ranking' } %><br />
+<%= link_to 'アカウント作成', { controller: 'users', action: 'new' } %>
