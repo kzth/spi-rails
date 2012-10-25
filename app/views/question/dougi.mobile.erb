@@ -1,0 +1,18 @@
+<div data-role="header">
+  <h1>問題</h1>
+</div>
+
+<div data-role="content">
+  <h2>第<%= @num %>問目</h2>
+  <p><%= @question %></p><br />
+  <%= form_tag action: "explain" do %>
+    <fieldset data-role="controlgroup">
+      <%= @select.shuffle.each_with_index do |item, i| %>
+        <%= radio_button_tag("a", item) %>
+        <%= item %>
+      <% end %><br /><br />
+    </fieldset>
+    <%= hidden_field_tag(:num, @num) %>
+    <%= submit_tag '解答する' %>
+  <% end %>
+</div>

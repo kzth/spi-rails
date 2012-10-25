@@ -1,0 +1,20 @@
+<div data-role="header">
+  <h1>語彙力アゲッター</h1>
+</div>
+
+<div data-role="content">
+  <h2>TOP PAGE</h2>
+  <%= flash[:notice] %>
+  <%= form_tag(:action => "login") do %>
+    <div class="login_form">
+      <%= label :user, :account_name, {value: "アカウント名"} %>
+      <%= text_field :user, :account_name %><br />
+      <%= label :user, :password, {value: "パスワード"}%>
+      <%= text_field :user, :password %><br />
+      <%= submit_tag "login" %>
+    </div>
+  <% end %>
+  <br />
+  <%= link_to 'ランキング', {controller: "top", action: "ranking"} %><br />
+  <%= link_to 'アカウント作成', {controller: "users", action: "new"} %>
+</div> 
